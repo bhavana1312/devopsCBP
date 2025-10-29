@@ -2,20 +2,26 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Checkout') {
             steps {
                 git url: 'https://github.com/bhavana1312/devopsCBP.git', branch: 'main'
             }
         }
-        stage('Build Docker image') {
+
+        stage('Build Docker Image') {
             steps {
-                sh 'docker build -t flask-app .'
+                script {
+                    sh 'docker build -t flask-cicd-app .'
+                }
             }
         }
-        stage('Run Container') {
+
+        stage('Run Docker Container') {
             steps {
-                sh 'docker rm -f flask-app-container || true'
-                sh 'docker run -d --name flask-app-container -p 5000:5000 flask-app'
+                script {
+                    sh 'docker rm -f flask-cicd-app-container || true'
+                    sh 'docker run -d -p 5000:5000 --name flask-cicd-app-container flask-cicd-app'
+                }
             }
         }
     }
