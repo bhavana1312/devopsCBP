@@ -14,7 +14,7 @@ TEMPLATE = """
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="bg-white shadow-xl rounded-2xl p-10 text-center w-96">
         <h1 class="text-3xl font-bold text-indigo-600">🚀 Jenkins + Docker CI/CD</h1>
-        <p class="mt-4 text-gray-600">Flask app has been successfully deployed by as</p>
+        <p class="mt-4 text-gray-600">Flask app has been successfully deployed by bhanu</p>
         <div class="mt-6">
             <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
                 Deployment Status: LIVE ✅
